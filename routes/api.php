@@ -17,3 +17,20 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get("/", function(){
+    return response()->json(['message' => 'Esse endpoint esta indisponivel!'], 404);
+});
+
+Route::group(['prefix' => '/v1'], function()
+{
+    Route::get("/", function(){
+        return response()->json(['message' => 'Bem vindo a versão 1.0 da nossa api!'], 200);
+    });
+    Route::apiResource('marca', App\Http\Controllers\MarcaController::class);
+    Route::apiResource('modelo', App\Http\Controllers\ModeloController::class);
+    Route::apiResource('carro', App\Http\Controllers\CarroController::class);
+    Route::apiResource('cliente', App\Http\Controllers\ClienteController::class);
+    Route::apiResource('locacao', App\Http\Controllers\LocacaoController::class);
+});
