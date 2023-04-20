@@ -27,12 +27,13 @@ class MarcaController extends Controller
     
     public function update(Request $request, Marca $marca)
     {
-        //
+        $marca->update($request->all());
+        return $marca;
     }
 
     public function destroy(Marca $marca)
     {
-        $marca = $marca->delete();
-        return $marca;
+        $marca->delete();
+        return ['msg' => 'Removido com sucesso!'];
     }
 }
