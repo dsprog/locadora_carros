@@ -20,19 +20,31 @@ class MarcaController extends Controller
         return $marca;
     }
 
-    public function show(Marca $marca)
+    public function show($id)
     {
+        $marca = Marca::find($id);
+        if ($marca === null){
+            return response()->json(['msg' => 'nada foi com sucesso!'], 404);
+        }
         return $marca;
     }
     
-    public function update(Request $request, Marca $marca)
+    public function update(Request $request, $id)
     {
+        $marca = Marca::find($id);
+        if ($marca === null){
+            return response()->json(['msg' => 'nada foi com sucesso!'], 404);
+        }
         $marca->update($request->all());
         return $marca;
     }
 
-    public function destroy(Marca $marca)
-    {
+    public function destroy($id)
+    {        
+        $marca = Marca::find($id);
+        if ($marca === null){
+            return response()->json(['msg' => 'nada foi com sucesso!'], 404);
+        }
         $marca->delete();
         return ['msg' => 'Removido com sucesso!'];
     }
