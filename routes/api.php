@@ -28,9 +28,9 @@ Route::group(['prefix' => '/v1'], function()
     Route::get("/", function(){
         return response()->json(['message' => 'Bem vindo a versão 1.0 da nossa api!'], 200);
     });
-    Route::apiResource('marca', App\Http\Controllers\MarcaController::class);
-    Route::apiResource('modelo', App\Http\Controllers\ModeloController::class);
-    Route::apiResource('carro', App\Http\Controllers\CarroController::class);
-    Route::apiResource('cliente', App\Http\Controllers\ClienteController::class);
-    Route::apiResource('locacao', App\Http\Controllers\LocacaoController::class);
+    Route::apiResource('marca', App\Http\Controllers\Api\V1\MarcaController::class);
+    Route::apiResource('modelo', App\Http\Controllers\Api\V1\ModeloController::class);
+    Route::apiResource('carro', App\Http\Controllers\Api\V1\CarroController::class);
+    Route::apiResource('cliente', App\Http\Controllers\Api\V1\ClienteController::class);
+    Route::apiResource('locacao', App\Http\Controllers\Api\V1\LocacaoController::class);
 });
