@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use App\Http\Controllers\Controller;
 use App\Models\Marca;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MarcaController extends Controller
 {
@@ -64,7 +65,19 @@ class MarcaController extends Controller
             $request->validate($marca->rules(), $marca->feedback());
         }
 
-        $marca->update($request->all());
+        $file = $request->file("imagem");
+        $imagem = $marca->imagem;
+        if($file){
+            Storage::disk('public')->delete($imagem);
+            $imagem = $file->store('marcas', 'public');
+        }       
+
+        $data = [
+            'nome' => $request->nome,
+            'imagem' => $imagem
+        ];
+
+        $marca->update($data);
         return $marca;
     }
 
@@ -74,6 +87,7 @@ class MarcaController extends Controller
         if($marca === null){
             return response()->json(['erro'=>'Não encontrado'], 404);
         }
+        Storage::disk('public')->delete($marca->imagem);
         $marca->delete();
         return ['msg' => 'Removido com sucesso!'];
     }
