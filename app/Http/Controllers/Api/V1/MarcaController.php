@@ -22,7 +22,16 @@ class MarcaController extends Controller
     public function store(Request $request)
     {
         $request->validate($this->marca->rules(), $this->marca->feedback());
-        $marca = $this->marca->create($request->all());
+
+        $file = $request->file("imagem");
+        $imagem = $file->store('marcas', 'public');
+        
+        $data = [
+            'nome' => $request->nome,
+            'imagem' => $imagem
+        ];
+
+        $marca = $this->marca->create($data);
         return $marca;
     }
 
