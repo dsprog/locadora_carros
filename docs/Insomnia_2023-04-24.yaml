@@ -1,0 +1,511 @@
+_type: export
+__export_format: 4
+__export_date: 2023-04-25T01:16:49.421Z
+__export_source: insomnia.desktop.app:v2023.1.0
+resources:
+  - _id: req_7c125cb4d694445d9eda3259ba74b457
+    parentId: wrk_eab36a3b564a4c588cd306362bfd82d9
+    modified: 1681928690196
+    created: 1681922070371
+    url: http://localhost:8000/api
+    name: /api
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1681925370843
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_eab36a3b564a4c588cd306362bfd82d9
+    parentId: null
+    modified: 1682111559201
+    created: 1681921150378
+    name: Locadora de Carros
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_d47da518fb864a839cf31e52e5654a4e
+    parentId: wrk_eab36a3b564a4c588cd306362bfd82d9
+    modified: 1681928692491
+    created: 1681928671315
+    url: http://localhost:8000/api/v1
+    name: /api/v1
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1681923264127.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_dd98f20c5e4142c7b9aa66e6680b620b
+    parentId: fld_ec19ed6a6481450fbbed98f0b56e830b
+    modified: 1682378981073
+    created: 1681930166832
+    url: http://localhost:8000/api/v1/marca
+    name: /api/v1/marca
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_5ef4577625c44bd58c738153268fe5be
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1681803210514.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_ec19ed6a6481450fbbed98f0b56e830b
+    parentId: wrk_eab36a3b564a4c588cd306362bfd82d9
+    modified: 1682378953475
+    created: 1682378946530
+    name: marcas
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1681816549799.125
+    _type: request_group
+  - _id: req_bf9568c946be48bd8044171457f05870
+    parentId: fld_ec19ed6a6481450fbbed98f0b56e830b
+    modified: 1682382715293
+    created: 1681930209089
+    url: http://localhost:8000/api/v1/marca
+    name: /api/v1/marca/store
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_6d18eccfb5da4da7bf285a6ff232ce68
+          name: nome
+          value: Volkswagen
+          description: ""
+        - id: pair_369d469f5f554bee9717452600ebe3f2
+          name: imagem
+          value: ""
+          description: ""
+          disabled: false
+          type: file
+          fileName: C:\Users\Daniel\Desktop\imagens_marcas\imagens_marcas\volkswagen.png
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_92db3d6dc34a4a478b1a3ae209243659
+        disabled: false
+      - id: pair_f206156687af464197538133dff829b6
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1681803210464.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_86afe5d3dc134f5c9698cd97194ef6eb
+    parentId: fld_ec19ed6a6481450fbbed98f0b56e830b
+    modified: 1682383970439
+    created: 1681930377259
+    url: http://localhost:8000/api/v1/marca/7
+    name: /api/v1/marca/show
+    description: ""
+    method: GET
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params: []
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_007dfc351bfd40c8a1c3d49cd9dd1994
+      - id: pair_69f4f10a4ac6488bb45883522c5f6b7b
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1681803210414.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c63e2efa957d45bca2a4bc2eb6ca9159
+    parentId: fld_ec19ed6a6481450fbbed98f0b56e830b
+    modified: 1682384950246
+    created: 1681930503310
+    url: http://localhost:8000/api/v1/marca/7
+    name: /api/v1/marca/update
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_484f2e1926364cd9bbdbe1e40f2c18f3
+          name: nome
+          value: Volkswagen
+          description: ""
+        - id: pair_40ed96229db244eb8406730ec064709f
+          name: imagem
+          value: gm.jpg
+          description: ""
+          disabled: true
+          type: file
+          fileName: C:\Users\Daniel\Desktop\imagens_marcas\imagens_marcas\ford.png
+        - id: pair_50c5a142de4f4caa87b0ae3df3e94b21
+          name: _method
+          value: PATCH
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_54e3b300545a438fafe0fb352920352c
+      - id: pair_7457d8a764604ca381c25d0e12a222fa
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1681803210364.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9b7fb6429a874d4fbfd4142c5965528e
+    parentId: fld_ec19ed6a6481450fbbed98f0b56e830b
+    modified: 1682380133753
+    created: 1681930454777
+    url: http://localhost:8000/api/v1/marca/3
+    name: /api/v1/marca/delete
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params: []
+    parameters: []
+    headers:
+      - id: pair_1c02291b96944344b31c545d65523d21
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1681803210314.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_665cbcb57ad74a119ba1c34cf8bc5153
+    parentId: fld_3715c2512a644e85b3859f8c560fad6b
+    modified: 1682379161279
+    created: 1682379130126
+    url: http://localhost:8000/api/v1/modelo
+    name: /api/v1/modelo
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_5ef4577625c44bd58c738153268fe5be
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1681803210514.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_3715c2512a644e85b3859f8c560fad6b
+    parentId: wrk_eab36a3b564a4c588cd306362bfd82d9
+    modified: 1682379130108
+    created: 1682379130108
+    name: modelos
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1669836205431.0625
+    _type: request_group
+  - _id: req_393f3d96735b4a3e9d0443df9264701f
+    parentId: fld_3715c2512a644e85b3859f8c560fad6b
+    modified: 1682383132220
+    created: 1682379130151
+    url: http://localhost:8000/api/v1/modelo
+    name: /api/v1/modelo/store
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_6d18eccfb5da4da7bf285a6ff232ce68
+          name: nome
+          value: Plo 1.0
+          description: ""
+        - id: pair_369d469f5f554bee9717452600ebe3f2
+          name: imagem
+          value: Hyundai.png
+          description: ""
+          disabled: false
+          type: file
+          multiline: true
+          fileName: C:\Users\Daniel\Desktop\imagens_modelos\volkswagen_polo_1_0.png
+        - id: pair_40cc749b82ec466180f8733b437f3ab0
+          name: marca_id
+          value: "5"
+          description: ""
+        - id: pair_86824dfe35b84de899eaa904f4eae2c8
+          name: numero_portas
+          value: "4"
+          description: ""
+        - id: pair_9423fd11c6954ff0a9bca4e706c843c9
+          name: lugares
+          value: "5"
+          description: ""
+        - id: pair_3d177cae3016449a804edfebfc6ce094
+          name: air_bag
+          value: "1"
+          description: ""
+        - id: pair_71c5f7d005e44d2b89be45ad47d587cc
+          name: abs
+          value: "0"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_92db3d6dc34a4a478b1a3ae209243659
+        disabled: false
+      - id: pair_f206156687af464197538133dff829b6
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1681803210464.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_716005b44a534aa1be4dae70c2519950
+    parentId: fld_3715c2512a644e85b3859f8c560fad6b
+    modified: 1682382742422
+    created: 1682379130179
+    url: http://localhost:8000/api/v1/modelo/2
+    name: /api/v1/modelo/show
+    description: ""
+    method: GET
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params: []
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_007dfc351bfd40c8a1c3d49cd9dd1994
+      - id: pair_69f4f10a4ac6488bb45883522c5f6b7b
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1681803210414.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7a6346089fbd4295832654df2dbfbcf5
+    parentId: fld_3715c2512a644e85b3859f8c560fad6b
+    modified: 1682385038796
+    created: 1682379130228
+    url: http://localhost:8000/api/v1/modelo/1
+    name: /api/v1/modelo/update
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_484f2e1926364cd9bbdbe1e40f2c18f3
+          name: nome
+          value: Polo 1.0
+          description: ""
+          disabled: true
+        - id: pair_40ed96229db244eb8406730ec064709f
+          name: imagem
+          value: gm.jpg
+          description: ""
+          disabled: true
+          type: file
+          fileName: C:\Users\Daniel\Desktop\imagens_modelos\volkswagen_gol_1_6.png
+        - id: pair_50c5a142de4f4caa87b0ae3df3e94b21
+          name: _method
+          value: PATCH
+          description: ""
+          disabled: false
+        - id: pair_2879809d0c9f4a278dafa834cf87e360
+          name: marca_id
+          value: "7"
+          description: ""
+          disabled: true
+        - id: pair_801497b8d3f64d3cb54d889e2507b0b9
+          name: numero_portas
+          value: "6"
+          description: ""
+          disabled: true
+        - id: pair_7b18411f9a424d5cb7e5d8779d2ab50f
+          name: lugares
+          value: "5"
+          description: ""
+          disabled: true
+        - id: pair_215e3358a5d141579551e0779b3dfa47
+          name: air_bag
+          value: "1"
+          description: ""
+          disabled: true
+        - id: pair_db67c37e5bbc4816877610538dc4c536
+          name: abs
+          value: "1"
+          description: ""
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+        id: pair_54e3b300545a438fafe0fb352920352c
+      - id: pair_7457d8a764604ca381c25d0e12a222fa
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1681803210364.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_3552266ef6ab4a748ed8c4974a050ad8
+    parentId: fld_3715c2512a644e85b3859f8c560fad6b
+    modified: 1682383214464
+    created: 1682379130202
+    url: http://localhost:8000/api/v1/modelo/3
+    name: /api/v1/marca/delete
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/x-www-form-urlencoded
+      params: []
+    parameters: []
+    headers:
+      - id: pair_1c02291b96944344b31c545d65523d21
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1681803210314.3281
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_9c1dd63e94acca3615f435b6e5a67e4e99eb4afa
+    parentId: wrk_eab36a3b564a4c588cd306362bfd82d9
+    modified: 1681921150386
+    created: 1681921150386
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1681921150386
+    _type: environment
+  - _id: jar_9c1dd63e94acca3615f435b6e5a67e4e99eb4afa
+    parentId: wrk_eab36a3b564a4c588cd306362bfd82d9
+    modified: 1682112969275
+    created: 1681921150393
+    name: Default Jar
+    cookies:
+      - key: XSRF-TOKEN
+        value: eyJpdiI6InVhdkQ4Q242bm81Uk5GYktBcjJuamc9PSIsInZhbHVlIjoiQkJIUE5Rd1FrWjJHM1Izem9hNWRnK2hzTmQxS2Mwc0FsbU5GbE9jSC92NmJKUU1rUVYyTnZHcWlVRlZTTlhyak5TSEtLcjBTY0xQUzdLNkdWVVd6UTcydFZhOWRObjRldUdXa3VrRzYwVkxiTkpLemhOTjF1MzNLNnlZcDJKTFMiLCJtYWMiOiIxOWFmYzkzMjkwNzhiYzA3YWIzZGY3NmNmODRmMjAwYTMxMDAzMjZlODBmODUxMGNiNWE4MDJlZWNkN2MyY2JhIiwidGFnIjoiIn0%3D
+        expires: 2023-04-21T23:36:09.000Z
+        maxAge: 7200
+        domain: localhost
+        path: /
+        extensions:
+          - samesite=lax
+        hostOnly: true
+        creation: 2023-04-19T16:34:36.082Z
+        lastAccessed: 2023-04-21T21:36:09.275Z
+        id: "14197868016944382"
+      - key: laravel_session
+        value: eyJpdiI6IjkwaEhZUWtwL3lsU0pRSkZvaDkvWnc9PSIsInZhbHVlIjoiZ0kzdGMrOTdqdm9TQzk3M1VYWGNjUUdQZlNBZ1g2OHpxL1E1dDhyWk1hRExDY0ZVSUJIeVF2MDdMYVhDbmpXb2o3aFUyQ1dyWE0vN01TRWFTT3FyVDhIaU1reUpPV1J2anBPRnY3TVhNL0xEU1lhTm1QZy9zYTJxTzdna3B5VUoiLCJtYWMiOiI1YzBiYzAxODFiZmQxZmY2MTc0NmYxNjI3ZWY2ZGY3M2YzOWM3OTk1NzNmNTM4NzZkZjRlNTJlYjFmNWJlNDkzIiwidGFnIjoiIn0%3D
+        expires: 2023-04-21T23:36:09.000Z
+        maxAge: 7200
+        domain: localhost
+        path: /
+        httpOnly: true
+        extensions:
+          - samesite=lax
+        hostOnly: true
+        creation: 2023-04-19T16:34:36.082Z
+        lastAccessed: 2023-04-21T21:36:09.275Z
+        id: "850164274546974"
+    _type: cookie_jar
+  - _id: spc_7d7d7d4c7f254457b5223bb6f782d092
+    parentId: wrk_eab36a3b564a4c588cd306362bfd82d9
+    modified: 1681921150380
+    created: 1681921150380
+    fileName: Login
+    contents: ""
+    contentType: yaml
+    _type: api_spec
