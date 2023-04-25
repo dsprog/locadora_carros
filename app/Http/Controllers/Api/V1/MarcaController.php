@@ -16,7 +16,7 @@ class MarcaController extends Controller
 
     public function index()
     {
-        $marca = $this->marca->all();
+        $marca = $this->marca->with('modelos')->get();
         return $marca;
     }
 
@@ -26,7 +26,7 @@ class MarcaController extends Controller
 
         $file = $request->file("imagem");
         $imagem = $file->store('marcas', 'public');
-        
+
         $data = [
             'nome' => $request->nome,
             'imagem' => $imagem
@@ -38,7 +38,7 @@ class MarcaController extends Controller
 
     public function show($id)
     {
-        $marca  = $this->marca->find($id);
+        $marca  = $this->marca->with('modelos')->find($id);
         if($marca === null){
             return response()->json(['erro'=>'Não encontrado'], 404);
         }
@@ -70,7 +70,7 @@ class MarcaController extends Controller
         if($file){
             Storage::disk('public')->delete($imagem);
             $imagem = $file->store('marcas', 'public');
-        }       
+        }
 
         $data = [
             'nome' => $request->nome,
