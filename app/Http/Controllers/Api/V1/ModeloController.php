@@ -79,17 +79,10 @@ class ModeloController extends Controller
             $imagem = $file->store('modelos', 'public');
         }
 
-        $data = [
-            'marca_id' => $request->marca_id,
-            'nome' => $request->nome,
-            'imagem' => $imagem,
-            'numero_portas' => $request->numero_portas,
-            'lugares' => $request->lugares,
-            'air_bag' => $request->air_bag,
-            'abs' => $request->abs,
-        ];
+        $modelo->fill($request->all());
+        $modelo->imagem = $imagem;
+        $modelo->save();
 
-        $modelo->update($data);
         return $modelo;
     }
 

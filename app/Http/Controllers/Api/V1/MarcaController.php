@@ -72,12 +72,10 @@ class MarcaController extends Controller
             $imagem = $file->store('marcas', 'public');
         }
 
-        $data = [
-            'nome' => $request->nome,
-            'imagem' => $imagem
-        ];
+        $marca->fill($request->all());
+        $marca->imagem = $imagem;
+        $marca->save();
 
-        $marca->update($data);
         return $marca;
     }
 
