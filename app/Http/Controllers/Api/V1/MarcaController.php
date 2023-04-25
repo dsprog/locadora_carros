@@ -9,15 +9,50 @@ use Illuminate\Support\Facades\Storage;
 
 class MarcaController extends Controller
 {
+
+    private $marca;
+
     public function __construct(Marca $marca)
     {
         $this->marca = $marca;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $marca = $this->marca->with('modelos')->get();
-        return $marca;
+        $marcas = $this->marca;
+        
+
+        if ($request->has('fields')){
+            $fields = $request->fields;
+            $marcas = $marcas->selectRaw($fields);
+        }
+
+        if ($request->has('search')){
+            $search = $request->search;
+
+            $filtro = explode(';', $search);
+
+            foreach($filtro as $k => $v){
+                $searchArr = explode(':', $v);
+                if(isset($searchArr[2])){
+                    $marcas = $marcas->where(
+                        $searchArr[0], 
+                        $searchArr[1], 
+                        $searchArr[2]
+                    );
+                }
+            }
+        }
+
+        if ($request->has('modelo_fields')){
+            $modelo_fields = $request->modelo_fields;
+            $marcas = $marcas->with('modelos:id,marca_id,'.$modelo_fields);
+        }else{
+            $marcas = $marcas->with('modelos');
+        }
+        
+        $marcas = $marcas->get();
+        return $marcas;
     }
 
     public function store(Request $request)

@@ -16,10 +16,48 @@ class ModeloController extends Controller
         $this->modelo = $modelo;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $modelo = $this->modelo->with('marca')->get();
-        return $modelo;
+        $modelos = $this->modelo;
+        $marca = false;
+        if ($request->has('fields')){
+            $fields = $request->fields;
+
+            $fieldsArr = explode(',', $fields);
+            if(in_array('marca_id', $fieldsArr)){
+                $marca = true;
+            }
+
+            $modelos = $modelos->selectRaw($fields);
+        }
+
+        if ($request->has('search')){
+            $search = $request->search;
+
+            $filtro = explode(';', $search);
+
+            foreach($filtro as $k => $v){
+                $searchArr = explode(':', $v);
+                if(isset($searchArr[2])){
+                    $modelos = $modelos->where(
+                        $searchArr[0], 
+                        $searchArr[1], 
+                        $searchArr[2]
+                    );
+                }
+            }
+        }
+
+        if($marca){        
+            if ($request->has('marca_fields')){
+                $marca_fields = $request->marca_fields;
+                $modelos = $modelos->with('marca:id,'.$marca_fields);
+            }else{
+                $modelos = $modelos->with('marca');
+            }
+        }
+
+        return $modelos->get();
     }
 
     public function store(Request $request)
